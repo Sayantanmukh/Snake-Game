@@ -11,7 +11,8 @@ const App=()=>{
             <ChakraProvider>
                 <Container maxW="container.lg" centerContent>
                 <Heading as="h1" size="xl">SNAKE GAME</Heading>
-                <CanvasBoard height={600} width={1000} /> //Canvasboard component added 
+                <CanvasBoard height={600} width={1000} /> 
+                {/* //Canvasboard component added  */}
                 </Container>
             </ChakraProvider>
         </Provider>
