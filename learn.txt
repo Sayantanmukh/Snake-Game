@@ -1,0 +1,5 @@
+useEffect
+useState
+useRef
+
+https://www.freecodecamp.org/news/build-a-snake-game-with-react-redux-and-redux-sagas/
