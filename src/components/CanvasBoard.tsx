@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
+import { clearBoard, drawObject, generateRandomPosition, IGlobalState, IObjectBody } from "../utilities";
 
 export interface ICanvasBoard{
      height: number;
@@ -8,9 +10,15 @@ export interface ICanvasBoard{
 const CanvasBoard({height,width}: ICanvasBoard)=>{
     const canvasRef=(useRef< HTMLCanvasElement)|(null> null);
     const [context, setContext]=(useState | CanvasRenderingContext2D)<(null> null);
-   
+    const snake1=useSelector((state: IGlobalState) => state.snake);
+    const [pos,setpos] =useState<IObjectBody>(generateRandomPosition(width-20,height-20));
+
+
+
     useEffect(() => {
         setContext(canvasRef.current && canvasRef.current.getContext("2d") );
+        drawObject(context, snake1, "#91C483"); //Draws snake at the required position
+		drawObject(context, [pos], "#676FA3"); //Draws fruit randomly
     },[context]);
 
     return(
